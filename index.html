@@ -208,13 +208,10 @@
   .price-tabs{display:flex; justify-content:center; gap:16px; margin-bottom:44px; flex-wrap:wrap;}
   .price-tab{
     display:flex; align-items:center; gap:12px;
-    background:var(--blush-soft); border:1px solid var(--blush); padding:8px 26px 8px 8px;
+    background:var(--blush-soft); border:1px solid var(--blush); padding:12px 28px;
     border-radius:30px; font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--rose-deep);
   }
-  .price-tab .flower-badge{width:36px; height:36px;}
-  .price-tab .flower-badge svg{width:16px; height:16px;}
   .price-tab.active{background:var(--rose-deep); color:#fff; border-color:var(--rose-deep);}
-  .price-tab.active .flower-badge{background:#fff;}
   .price-group{display:none;}
   .price-group.active{display:block;}
   .price-list{max-width:720px; margin:0 auto;}
@@ -314,11 +311,11 @@
 
 <header>
   <div class="nav-wrap">
-    <div class="logo"><span class="crescent"></span> nailsmedmath</div>
+    <div class="logo" data-page="home" style="cursor:pointer;"><span class="crescent"></span> nailsmedmath</div>
     <nav class="links" id="navLinks">
       <button data-page="home" class="active">Hjem</button>
       <button data-page="prices">Priser</button>
-      <button data-page="gallery">Referanser</button>
+      <button data-page="gallery">Eksempler</button>
       <button data-page="booking">Bestill time</button>
     </nav>
     <button class="nav-cta" data-page="booking">Bestill time</button>
@@ -334,12 +331,13 @@
       <div class="hero-glow"></div>
       <div class="hero-text">
         <div class="eyebrow">Neglesalong · @nailsmedmath</div>
-        <h1>Kom som du er,<br><em>gå ut med negler du elsker.</em></h1>
+        <h1>Life can't be perfect,<br><em>but your nails can be.</em></h1>
         <div class="heart-divider" style="margin-left:0; justify-content:flex-start; max-width:260px;"><span class="hd-line"></span><span class="hd-heart">♡</span><span class="hd-line"></span></div>
         <p class="lede" style="margin-top:24px;">nailsmedmath er et lite neglestudio for deg som vil senke skuldrene en time og gå ut med negler du faktisk gleder deg over. Shellac og builder gel, med rom for design du ønsker deg — utført med ro og presisjon.</p>
         <div class="hero-actions">
-          <button class="btn-primary" data-page="booking">Send forespørsel</button>
+          <button class="btn-primary" data-page="booking">Bestill time</button>
           <button class="btn-ghost" data-page="prices">Se priser</button>
+          <button class="btn-ghost" data-page="gallery">Se eksempler</button>
         </div>
       </div>
       <div class="hero-art">
@@ -347,40 +345,6 @@
           <img src="nail-photo-1.jpg" alt="Hånd med negler, builder gel med French og 3D-blomst">
         </div>
       </div>
-    </div>
-
-    <div class="strip">
-      <div class="section-head">
-        <div class="eyebrow">Tjenester</div>
-        <h2>Det vi tilbyr</h2>
-        <div class="heart-divider"><span class="hd-line"></span><span class="hd-heart">♡</span><span class="hd-line"></span></div>
-        <p style="margin-top:18px;">Et lite utvalg av behandlingene våre — full oversikt finner du på prissiden.</p>
-      </div>
-      <div class="cards3">
-        <div class="feature-card">
-          <span class="flower-badge"><svg viewBox="0 0 24 24"><g fill="var(--rose)"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="var(--gold)"/></svg></span>
-          <h3 style="margin-top:16px;">Shellac</h3>
-          <p>Uten lengde — enkel farge, French eller design på dine egne negler.</p>
-        </div>
-        <div class="feature-card">
-          <span class="flower-badge"><svg viewBox="0 0 24 24"><g fill="var(--rose)"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="var(--gold)"/></svg></span>
-          <h3 style="margin-top:16px;">Builder gel</h3>
-          <p>Med lengde — bygget forsiktig opp for et naturlig, holdbart resultat.</p>
-        </div>
-        <div class="feature-card">
-          <span class="flower-badge"><svg viewBox="0 0 24 24"><g fill="var(--rose)"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="var(--gold)"/></svg></span>
-          <h3 style="margin-top:16px;">Design</h3>
-          <p>French, 3D-design og annet design tilpasset ønsket ditt.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-band">
-      <div class="eyebrow">Ledig denne uken</div>
-      <h2>Klar for nye negler?</h2>
-      <div class="heart-divider"><span class="hd-line"></span><span class="hd-heart">♡</span><span class="hd-line"></span></div>
-      <p style="margin-top:18px;">Send oss en forespørsel om ønsket dag og tid, så bekrefter vi timen din personlig.</p>
-      <button class="btn-primary" data-page="booking">Bestill time</button>
     </div>
   </section>
 
@@ -394,33 +358,33 @@
     </div>
 
     <div class="price-tabs">
-      <button class="price-tab active" data-group="shellac">
-        <span class="flower-badge"><svg viewBox="0 0 24 24"><g fill="var(--rose)"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="var(--gold)"/></svg></span>
-        Shellac (uten lengde)
-      </button>
       <button class="price-tab" data-group="builder">
-        <span class="flower-badge"><svg viewBox="0 0 24 24"><g fill="var(--rose)"><circle cx="12" cy="6" r="4"/><circle cx="12" cy="18" r="4"/><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/></g><circle cx="12" cy="12" r="3" fill="var(--gold)"/></svg></span>
-        Builder gel (med lengde)
+        Builder Gel (med forlengelse)
+      </button>
+      <button class="price-tab" data-group="shellac">
+        Shellac (uten forlengelse)
       </button>
     </div>
 
-    <div class="price-group active" id="group-shellac">
-      <div class="price-list">
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">Enkel farge</span></div><div class="dots"></div><span class="pval">120 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">French</span></div><div class="dots"></div><span class="pval">130 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">3D design</span></div><div class="dots"></div><span class="pval">30 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">Annet design</span></div><div class="dots"></div><span class="pval">5–30 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">Fjerning</span></div><div class="dots"></div><span class="pval">50 kr</span></div>
-      </div>
-    </div>
+    <p class="price-note" id="priceHint">Velg en kategori over for å se prisene.</p>
 
     <div class="price-group" id="group-builder">
       <div class="price-list">
         <div class="price-row"><span class="crescent"></span><div><span class="pname">Enkel farge</span></div><div class="dots"></div><span class="pval">400 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">French</span></div><div class="dots"></div><span class="pval">420 kr</span></div>
-        <div class="price-row"><span class="crescent"></span><div><span class="pname">3D design</span></div><div class="dots"></div><span class="pval">30 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">French</span></div><div class="dots"></div><span class="pval">20 kr</span></div>
         <div class="price-row"><span class="crescent"></span><div><span class="pname">Annet design</span></div><div class="dots"></div><span class="pval">5–50 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">3D design</span></div><div class="dots"></div><span class="pval">30 kr</span></div>
         <div class="price-row"><span class="crescent"></span><div><span class="pname">Fjerning</span></div><div class="dots"></div><span class="pval">80 kr</span></div>
+      </div>
+    </div>
+
+    <div class="price-group" id="group-shellac">
+      <div class="price-list">
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">Enkel farge</span></div><div class="dots"></div><span class="pval">120 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">French</span></div><div class="dots"></div><span class="pval">10 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">Annet design</span></div><div class="dots"></div><span class="pval">5–30 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">3D design</span></div><div class="dots"></div><span class="pval">30 kr</span></div>
+        <div class="price-row"><span class="crescent"></span><div><span class="pname">Fjerning</span></div><div class="dots"></div><span class="pval">50 kr</span></div>
       </div>
     </div>
 
@@ -430,11 +394,10 @@
   <!-- GALLERY -->
   <section class="page" id="page-gallery">
     <div class="section-head" style="margin-top:60px;">
-      <div class="eyebrow">Referanser</div>
+      <div class="eyebrow">Eksempler</div>
       <h2>Tidligere arbeid</h2>
       <div class="heart-divider"><span class="hd-line"></span><span class="hd-heart">♡</span><span class="hd-line"></span></div>
     </div>
-    <p class="gallery-note">Dette er eksempelbilder som viser hvordan galleriet vil se ut. Disse byttes ut med ekte bilder av kundenes negler så snart de er klare.</p>
     <p style="text-align:center; margin-top:-30px; margin-bottom:50px;">
       <a href="https://www.instagram.com/nailsmedmath" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-block;">Se flere eksempler på Instagram ↗</a>
     </p>
@@ -474,10 +437,6 @@
             <input type="tel" id="phone" required>
           </div>
         </div>
-        <div class="field">
-          <label for="email">E-post</label>
-          <input type="email" id="email" required>
-        </div>
         <div class="field-row">
           <div class="field">
             <label for="service">Ønsket behandling</label>
@@ -498,12 +457,8 @@
           </div>
         </div>
         <div class="field">
-          <label for="time">Ønsket tidspunkt</label>
-          <input type="text" id="time" placeholder="f.eks. ettermiddag, ca. kl. 14">
-        </div>
-        <div class="field">
           <label for="message">Melding (valgfritt)</label>
-          <textarea id="message" placeholder="Ønsket farge, inspirasjonsbilde, allergier osv."></textarea>
+          <textarea id="message" placeholder="Ønsket farge, inspirasjonsbilde, design osv."></textarea>
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">Send forespørsel</button>
         <div class="form-msg" id="formMsg"></div>
@@ -577,6 +532,8 @@
       document.querySelectorAll('.price-group').forEach(g => g.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('group-' + tab.dataset.group).classList.add('active');
+      const hint = document.getElementById('priceHint');
+      if (hint) hint.style.display = 'none';
     });
   });
 
@@ -595,10 +552,8 @@
     const booking = {
       name: document.getElementById('name').value,
       phone: document.getElementById('phone').value,
-      email: document.getElementById('email').value,
       service: document.getElementById('service').value,
       date: document.getElementById('date').value,
-      time: document.getElementById('time').value,
       message: document.getElementById('message').value
     };
 
