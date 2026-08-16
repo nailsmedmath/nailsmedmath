@@ -479,7 +479,9 @@
 
 <script>
   // navigation
-  function showPage(page){
+  const validPages = ['home', 'prices', 'gallery', 'booking'];
+
+  function renderPage(page){
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + page).classList.add('active');
     document.querySelectorAll('nav.links button').forEach(b => {
@@ -488,12 +490,31 @@
     document.getElementById('navLinks').classList.remove('open');
     window.scrollTo({top:0, behavior:'smooth'});
   }
+
+  function showPage(page){
+    // updates the URL hash; the hashchange listener below does the actual rendering,
+    // so this also creates a browser history entry the back/forward buttons can use.
+    if (location.hash === '#' + page) {
+      renderPage(page);
+    } else {
+      location.hash = page;
+    }
+  }
+
+  window.addEventListener('hashchange', () => {
+    const page = location.hash.replace('#', '') || 'home';
+    renderPage(validPages.includes(page) ? page : 'home');
+  });
+
   document.querySelectorAll('[data-page]').forEach(el => {
     el.addEventListener('click', () => showPage(el.dataset.page));
   });
   document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('open');
   });
+
+  // show the correct page on first load (handles direct links like #priser too)
+  renderPage(validPages.includes(location.hash.replace('#', '')) ? location.hash.replace('#', '') : 'home');
 
   // gallery placeholders (swap for real photos later)
   const galleryItems = [
